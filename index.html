@@ -12,7 +12,7 @@
     <!-- Font Awesome (corrigido) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- Seu CSS -->
+
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
@@ -27,8 +27,7 @@
 
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <a href="index.html" class="btn btn-primary mb-3">Listar Usuários</a>
-                    <a href="create.html" class="btn btn-success mb-3">Criar Novo Usuário</a>
+                    <a href="#" id="btnAdicionar" class="btn btn-success mb-3">Criar Novo Usuário</a>
                 </div>
             </div>
         </div>
@@ -50,8 +49,8 @@
                         <td>Maria</td>
                         <td>maria@email.com</td>
                         <td>
-                            <a href="edit.html" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="#" class="btn btn-sm btn-warning btnEditar">Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger btnExcluir">Excluir</a>
                         </td>
                     </tr>
                 </tbody>
@@ -92,6 +91,49 @@
             </div>
         </footer>
     </div>
+
+    <!-- Script da modal de cadastro/editar -->
+    <div class="modal" id="usuarioModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitulo">Usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="usuarioForm">
+                        <input type="hidden" id="usuarioId">
+
+                        <div class="mb-3">
+                            <label for="inputNome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inputNome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputTelefone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="inputTelefone">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!-- Application script -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
